@@ -1,5 +1,6 @@
 # Cleanser
 
+[![Build Status](https://travis-ci.org/nicoevergara/cleanser.svg?branch=master)](https://travis-ci.org/nicoevergara/cleanser)
 [![Hex.pm](https://img.shields.io/hexpm/v/cleanser.svg?style=flat-square)](https://hex.pm/packages/cleanser)
 [![Hex.pm](https://img.shields.io/hexpm/dt/cleanser.svg?style=flat-square)](https://hex.pm/packages/cleanser)
 
