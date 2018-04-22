@@ -2,7 +2,6 @@ defmodule Cleanser.MixProject do
   use Mix.Project
 
   @repo "https://github.com/nicoevergara/cleanser"
-  @documentation "https://hexdocs.pm/cleanser"
 
   def project do
     [
@@ -11,6 +10,7 @@ defmodule Cleanser.MixProject do
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      description: description(),
       package: package(),
 
       # Docs
@@ -38,12 +38,14 @@ defmodule Cleanser.MixProject do
   ]
   end
 
+
+  defp description() do
+    "An email validation library (with more to come) written entirely in Elixir!"
+  end
+
   defp package do
     [ maintainers: ["Nico Vergara"],
       licenses: ["MIT"],
-      links: %{
-        "GitHub" => @repo,
-        "Documentation" => @documentation
-      }]
+      links: %{"GitHub" => @repo}]
   end
 end
