@@ -1,5 +1,8 @@
 # Cleanser
 
+[![Hex.pm](https://img.shields.io/hexpm/v/cleanser.svg?style=flat-square)](https://hex.pm/packages/cleanser)
+[![Hex.pm](https://img.shields.io/hexpm/dt/cleanser.svg?style=flat-square)](https://hex.pm/packages/cleanser)
+
 A validation library for emails (and more soon!)
 
 ## Installation
