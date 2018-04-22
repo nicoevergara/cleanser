@@ -35,7 +35,6 @@ defmodule Cleanser do
   end
 
   @doc false
-
   def parse_email_domain(email) when is_binary(email) do
     email_parts = String.split(email, "@")
 
