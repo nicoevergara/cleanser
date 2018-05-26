@@ -21,7 +21,7 @@ end
 
 ## Basic Usage
 
-There are two functions that currently exist within Cleanser (with more to come specifically to work with Phoenix's changesets).
+There are three functions that currently exist within Cleanser (with more to come specifically to work with Phoenix's changesets).
 
 ```
 # Validate email against default invalid domains
@@ -35,9 +35,12 @@ Cleanser.is_valid_domain?/1
 
 # Validate domain against custom invalid domains as well as defaults
 Cleanser.is_valid_domain?/2
+
+# Validate credit card number using the Luhn algorithm
+Cleanser.is_valid_credit_card?/1
 ```
 
-These functions will return a simple `:ok` or `{:error, "<error_message>"}` if the email/domain is valid or invalid. If there are any errors with types, standard errors will be thrown, though some guards in there to prevent as many issues as possible.
+These functions will return a simple `:ok` or `{:error, "<error_message>"}` if the email/domain/credit card is valid or invalid. If there are any errors with types, standard errors will be thrown, though some guards in there to prevent as many issues as possible.
 
 Documentation can
 be found at [https://hexdocs.pm/cleanser](https://hexdocs.pm/cleanser).
