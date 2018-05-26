@@ -49,7 +49,7 @@ defmodule Cleanser do
   @doc """
   Domain Validation
 
-  Validated a given `domain` against a list of disposable emails.
+  Validates a given `domain` against a list of disposable emails.
 
   ## Examples
 
@@ -86,5 +86,34 @@ defmodule Cleanser do
     Path.join(:code.priv_dir(:cleanser), "disposable_emails.txt")
     |> File.read!
     |> String.split
+  end
+
+  @doc """
+  Credit Card Validation
+
+  Validates a given credit card number using the Luhn Check Sum.
+
+  ## Examples
+
+      iex> Cleanser.is_valid_credit_card?(4024007157761171)
+      :ok
+
+      iex> Cleanser.is_valid_credit_card?(4111111111111113)
+      {:error, "4111111111111113 is an invalid credit card number"}
+
+  """
+
+  def is_valid_credit_card?(card_number) when is_integer(card_number) do
+    [head | tail] = Enum.reverse(Integer.digits(card_number))
+    doubled = Enum.map_every(tail, 2, fn x -> if x >= 5, do: x * 2 - 9, else: x * 2 end)
+    non_check_sum = Enum.sum(doubled)
+    remainder = rem(non_check_sum + head, 10)
+
+    case remainder do
+      0 ->
+        :ok
+      _ ->
+        {:error, "#{card_number} is an invalid credit card number"}
+    end
   end
 end
