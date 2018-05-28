@@ -147,7 +147,7 @@ defmodule Cleanser do
   def is_valid_language?(language) do
     language = String.downcase(language)
     valid_language = ["arabic", "chinese", "czech", "danish", "dutch", "english", "esperanto", "finnish", "french",
-      "german", "hindi", "hungarian", "italian", "japanese", "klingon", "korean", "norwegian", "persian", "polish",
+      "german", "hindi", "hungarian", "italian", "japanese", "korean", "norwegian", "persian", "polish",
       "portuguese", "russian", "spanish", "swedish", "thai", "turkish"]
                     |> MapSet.new
                     |> MapSet.member?(language)
