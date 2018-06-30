@@ -103,6 +103,11 @@ defmodule Cleanser do
 
   """
 
+  # Using the Luhn Sum Algorithm this:
+  # 1) Starting from the right most number, doubles the value of every second number
+  #     If the value of the number doubled is 10 or more, subtract 9
+  # 2) Takes the sum of all the numbers
+  # 3) If the sum is evenly divisible by 10, then the credit card number is valid
   def is_valid_credit_card?(card_number) when is_integer(card_number) do
     [head | tail] = Enum.reverse(Integer.digits(card_number))
     doubled = Enum.map_every(tail, 2, fn x -> if x >= 5, do: x * 2 - 9, else: x * 2 end)

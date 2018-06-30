@@ -36,7 +36,7 @@ Cleanser.is_valid_domain?/1
 # Validate domain against custom invalid domains as well as defaults
 Cleanser.is_valid_domain?/2
 
-# Validate credit card number using the Luhn algorithm
+# Validate credit card number using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
 Cleanser.is_valid_credit_card?/1
 ```
 
