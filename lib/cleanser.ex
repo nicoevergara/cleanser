@@ -99,7 +99,7 @@ defmodule Cleanser do
       iex> Cleanser.contains_bad_words?("Hello I am normal", "English")
       :ok
 
-      iex> Cleanser.contains_bad_words?("What the fuck", "english")
+      iex> Cleanser.contains_bad_words?("What the butt", "english")
       {:error, "This string contains bad words"}
 
       iex> Cleanser.contains_bad_words?("ok ok 挿入 ok ok", "japanese")
@@ -123,7 +123,7 @@ defmodule Cleanser do
   end
 
   defp bad_words(language) do
-    Path.join(:code.priv_dir(:cleanser), "bad_words/#{language}")
+    Path.join(:code.priv_dir(:cleanser), "bad_words/#{language}.txt")
     |> File.read!
     |> String.downcase()
     |> String.split
