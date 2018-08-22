@@ -123,6 +123,7 @@ defmodule Cleanser do
   end
 
   defp bad_words(language) do
+    language = String.downcase(language)
     Path.join(:code.priv_dir(:cleanser), "bad_words/#{language}.txt")
     |> File.read!
     |> String.downcase()

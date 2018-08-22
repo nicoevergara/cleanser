@@ -29,5 +29,4 @@ defmodule CleanserTest do
     assert Cleanser.is_valid_credit_card?(4532004657698632172) == :ok
     assert Cleanser.is_valid_credit_card?(370177727770444) == {:error, "370177727770444 is an invalid credit card number"}
   end
-
 end
