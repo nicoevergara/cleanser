@@ -107,18 +107,22 @@ defmodule Cleanser do
   """
 
   def contains_bad_words?(string, language) do
-    is_valid_language?(language)
-    words = String.downcase(string)
-            |>String.split
-            |>MapSet.new
-    is_valid = bad_words(language)
-              |> MapSet.new
-              |> MapSet.disjoint?(words)
-    case is_valid do
-      true ->
-        :ok
-      false ->
-        {:error, "This string contains bad words"}
+    case is_valid_language?(language) do
+      :ok ->
+        words = String.downcase(string)
+        |>String.split
+        |>MapSet.new
+        is_valid = bad_words(language)
+                |> MapSet.new
+                |> MapSet.disjoint?(words)
+        case is_valid do
+        true ->
+          :ok
+        false ->
+          {:error, "This string contains bad words"}
+        end
+      {:error, message} ->
+        {:error, message}
     end
   end
 

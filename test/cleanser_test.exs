@@ -16,6 +16,8 @@ defmodule CleanserTest do
     assert Cleanser.is_valid_language?("Arabic") == :ok
     assert Cleanser.is_valid_language?("japanese") == :ok
     assert Cleanser.is_valid_language?("meow") == {:error, "meow is either not a valid language or not available in this package"}
+    assert Cleanser.contains_bad_words?("what the doodle", "tootielang") == {:error, "tootielang is either not a valid language or not available in this package"}
+    assert Cleanser.contains_bad_words?("i have lots of butts ", "indo european") == {:error, "indo european is either not a valid language or not available in this package"}
   end
 
   test "test bad words filter" do
