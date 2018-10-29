@@ -50,7 +50,7 @@ be found at [https://hexdocs.pm/cleanser](https://hexdocs.pm/cleanser).
 
 If you have any problems with the package or have any feature requests, please create a [GitHub issue](https://github.com/nicoevergara/cleanser/issues) and I'll make sure to check it out!
 
-## Developement
+## Development
 
 I will be streaming the creation of this library on Twitch!
 
